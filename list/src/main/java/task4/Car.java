@@ -26,19 +26,16 @@ class Car implements Comparable {
         if (o instanceof Car) {
             Car other = (Car) o;
 
-            // 1. Порівняння ціни ("більше" той, у якого менша ціна)
             int priceDiff = other.price - this.price;
             if (priceDiff != 0) {
                 return priceDiff;
             }
 
-            // 2. Порівняння року ("більше" той, який менший за віком -> тобто рік випуску більший)
             int yearDiff = this.year - other.year;
             if (yearDiff != 0) {
                 return yearDiff;
             }
 
-            // 3. Порівняння к.с. ("більше" той, де більше сил)
             return this.horsePower - other.horsePower;
         }
         return 0;

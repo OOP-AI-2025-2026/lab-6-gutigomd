@@ -11,14 +11,11 @@ interface Cellular {
 
 class Smartphone implements GPS, Cellular {
 
-    // Реалізація методу GPS
     @Override
     public double[] getCoordinates() {
-        // Повертаємо приклад координат (широта, довгота)
         return new double[]{50.4501, 30.5234};
     }
 
-    // Реалізація методів Cellular
     @Override
     public void makeCall() {
         System.out.println("Виконується виклик...");

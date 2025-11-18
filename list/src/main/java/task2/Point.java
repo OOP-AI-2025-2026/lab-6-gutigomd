@@ -12,7 +12,6 @@ class Point implements Movable {
     private double x;
     private double y;
 
-    // Конструктор (опціонально, для зручності)
     public Point(double x, double y) {
         this.x = x;
         this.y = y;

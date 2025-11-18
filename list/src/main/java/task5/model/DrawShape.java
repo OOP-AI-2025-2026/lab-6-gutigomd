@@ -2,7 +2,7 @@ package task5.model;
 
 import java.awt.*;
 
-public abstract class DrawShape { // <--- Клас тепер абстрактний
+public abstract class DrawShape {
 
     public static final int SHAPE_RECTANGLE = 0;
     public static final int SHAPE_ROUNDED_RECT = 1;
@@ -40,11 +40,9 @@ public abstract class DrawShape { // <--- Клас тепер абстрактн
         this.endPoint = endPoint;
     }
 
-    // Цей метод викликає абстрактний метод
     public Shape getShape() {
         return this.getShape(startPoint, endPoint);
     }
 
-    // <--- Абстрактний метод (без реалізації, крапка з комою в кінці)
     public abstract Shape getShape(Point startPoint, Point endPoint);
 }
