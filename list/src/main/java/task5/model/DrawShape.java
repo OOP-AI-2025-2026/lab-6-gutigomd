@@ -1,0 +1,50 @@
+package task5.model;
+
+import java.awt.*;
+
+public abstract class DrawShape { // <--- Клас тепер абстрактний
+
+    public static final int SHAPE_RECTANGLE = 0;
+    public static final int SHAPE_ROUNDED_RECT = 1;
+    public static final int SHAPE_ELLIPSE = 2;
+
+    private Point startPoint;
+    private Point endPoint;
+
+    public static DrawShape newInstance(int shapeType) {
+        DrawShape shape = null;
+        if (shapeType == SHAPE_RECTANGLE) {
+            shape = new Rectangle();
+        } else if (shapeType == SHAPE_ROUNDED_RECT) {
+            shape = new RoundedRectangle();
+        } else if (shapeType == SHAPE_ELLIPSE) {
+            shape = new Ellipse();
+        }
+        return shape;
+    }
+
+    public DrawShape() {
+        this(new Point(0, 0), new Point(0, 0));
+    }
+
+    public DrawShape(Point startPoint, Point endPoint) {
+        this.startPoint = startPoint;
+        this.endPoint = endPoint;
+    }
+
+    public void setStartPoint(Point startPoint) {
+        this.startPoint = startPoint;
+    }
+
+    public void setEndPoint(Point endPoint) {
+        this.endPoint = endPoint;
+    }
+
+    // Цей метод викликає абстрактний метод
+    public Shape getShape() {
+        return this.getShape(startPoint, endPoint);
+    }
+
+    // <--- Абстрактний метод (без реалізації, крапка з комою в кінці)
+    public abstract Shape getShape(Point startPoint, Point endPoint);
+}
